@@ -25,6 +25,9 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
+    entry_params[:start_at] = Date.strptime(entry_params[:start_at], '%m/%d/%Y %I:%M %p') if entry_params[:start_at]
+    entry_params[:end_at] = Date.strptime(entry_params[:end_at], '%m/%d/%Y %I:%M %p') if entry_params[:start_at]
+
     @entry = Entry.new(entry_params)
     @entry.user = current_user
 
