@@ -33,11 +33,10 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    entry_params[:start_at] = Date.strptime(entry_params[:start_at], '%m/%d/%Y %I:%M %p') if entry_params[:start_at]
-    entry_params[:end_at] = Date.strptime(entry_params[:end_at], '%m/%d/%Y %I:%M %p') if entry_params[:start_at]
-
     @entry = Entry.new(entry_params)
     @entry.user = current_user
+    @entry.start_at = DateTime.strptime(entry_params[:start_at], '%m/%d/%Y %I:%M %p') if entry_params[:start_at]
+    @entry.end_at = DateTime.strptime(entry_params[:end_at], '%m/%d/%Y %I:%M %p') if entry_params[:end_at]
 
     respond_to do |format|
       if @entry.save
@@ -84,5 +83,5 @@ class EntriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def entry_params
     params.require(:entry).permit(:start_at, :end_at, :description, :parts_used, :purchase_order_id)
-    end
+  end
 end
