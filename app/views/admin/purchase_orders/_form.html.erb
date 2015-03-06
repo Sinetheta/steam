@@ -1,8 +1,6 @@
 <%= simple_form_for [:admin, @purchase_order], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :title %>
   <%= error_span(@purchase_order[:title]) %>
-  <%= f.input :description %>
-  <%= error_span(@purchase_order[:description]) %>
   <%= f.input :active %>
   <%= error_span(@purchase_order[:active]) %>
   <%= f.association :client %>
