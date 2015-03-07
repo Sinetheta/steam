@@ -1,7 +1,128 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canadian Steam LTD Time-Sheet</title>
+  <style type="text/css">
+    p, body {
+      color: #646464;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 22px;
+      margin: 0 auto;
+      font-size: 19px;
+    }
+    button {
+      color:#E0E0E0;
+      padding: 10px 16px;
+      font-size:20px;
+      line-height:1.5;
+      border-radius:6px;
+      background-color:#5985b1;
+      border-color:#5985b1;
+      cursor: pointer;
+    }
+  </style>
+</head>
 
-<p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
-
-<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+<body>
+<div style="background-color: #E7EBE1;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:17px;line-height:24px;color:#7D7D7D;">
+    <tbody>
+      <tr>
+        <td valign="top">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td valign="bottom" style="padding:20px 16px 12px">
+                  <div style="max-width:600px;margin:0 auto;text-align:center">
+                    <a href="https://www.slack.com" target="_blank">
+                      <img src="http://piechnik.ca/ext-images/logo-with-stroke.png" style="width:200px;">
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+            <tbody>
+              <tr>
+                <td valign="top">
+                  <div style="max-width:600px;margin:0 auto;padding:0 12px">
+                    <div style="background:white;border-radius:0.5rem;padding:2rem;margin-bottom:2rem;">
+                      <h2 style="color:#972914;margin:0 0 12px;line-height:30px">Hello!
+                      </h2>
+                      <p>You've been invited to begin submitting your hours online.  Click the below to confirm your new account
+                      </p>
+                      <p style="text-align:center;margin:2rem 0 1rem">
+                      <br>
+                      <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %>
+                      <br>
+                      </p>
+                      <p style="font-size:0.9rem;line-height:20px;color:#aaa;text-align:center;margin:0 auto 1rem;max-width:320px;word-break:break-word">Remember to use a secure password, and never share your password with friends or co-workers
+                      </p>
+                      <br>
+                      <p>Please keep this email and the following details for your records
+                      </p>
+                      <br>
+                      <p style="color: #646464;">You will submit your hours at:
+                        <br>
+                        <p>
+                          <%= (root_url) %>
+                        </p>
+                      </p>
+                      <br>
+                      <p style="color: #646464;">
+                        Your sign-in email/username is:
+                        <br>
+                        <%= (@resource.email) %>
+                    </p>
+                    <br>
+                    <br><br>
+                    <p>
+                      Enjoy the safety and security of your new time-sheet
+                      <br>
+                      -- Canadian Steam LTD
+                    </p>
+                    <br><br>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-top:1rem;background:white;color:#989ea6">
+            <tbody>
+              <tr>
+                <td valign="top" align="center" style="padding:16px 8px 24px">
+                  <div style="max-width:600px;margin:0 auto">
+                    <p style="margin-top:16px;font-size:12px;line-height:20px">
+                      Sent by
+                      <a href="https://www.canadiansteam.com" style="font-weight:bold;color:#439fe0" target="_blank">Canadian Steam LTD
+                      </a>
+                      <br>
+                        8089 Hunter St, Burnaby
+                        <br>
+                        BC, Canada, V5A 2B8
+                      <br>
+                      Click <a href="http://canadiansteam.com/unsubscribe">HERE </a> to unsubscribe from all future emails
+                      <br>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
