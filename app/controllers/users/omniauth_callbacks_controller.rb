@@ -20,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         sign_in_success
       else
-        flash[:error] = "No know user #{email}"
+        flash[:error] = "Unknown user #{email}"
         redirect_to new_user_session_path
       end
     end
