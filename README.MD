@@ -13,3 +13,7 @@
 ##Heroku
 
 `heroku run rake db:migrate`
+
+## Google Oauth
+
+For working login you must enable "Contacts API" and "Google+ API" https://github.com/zquestz/omniauth-google-oauth2/issues/111#issuecomment-41071094
