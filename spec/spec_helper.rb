@@ -15,10 +15,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-if ENV['CI']
-  require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
-elsif ENV['COVERAGE']
+if ENV['CI'] || ENV['COVERAGE']
   require 'simplecov'
   SimpleCov.start
 end

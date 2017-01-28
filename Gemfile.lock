@@ -290,7 +290,7 @@ DEPENDENCIES
   capybara
   capybara-email
   capybara-screenshot
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   coffee-rails (~> 4.1)
   coffeelint
   database_cleaner

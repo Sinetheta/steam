@@ -20,3 +20,5 @@ deploy:
   run:
     - "rake db:migrate"
     - restart
+after_success:
+  - bundle exec codeclimate-test-reporter
