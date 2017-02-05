@@ -28,3 +28,8 @@ en:
     dformat: '%R'
     pformat: 'hh:mm a'
   dayViewHeaderFormat: 'MMMM YYYY'
+  admin:
+    users:
+      edit:
+        error: 'Error updating employee info'
+        success: 'Sucessfully updated employee info'
