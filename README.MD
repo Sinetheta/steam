@@ -12,7 +12,12 @@
 
 ##Heroku
 
-`heroku run rake db:migrate`
+A Heroku pipeline will automatically deploy any changes to *master after any
+passing build.
+
+```
+heroku run rails console --app steam-hours-staging
+```
 
 ## Google Oauth
 

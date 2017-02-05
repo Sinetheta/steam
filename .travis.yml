@@ -1,6 +1,8 @@
 language: ruby
 rvm:
 - 2.1.2
+services:
+  - postgresql
 before_install:
 - psql -c 'create database steam_hours_test;' -U postgres
 addons:
@@ -10,15 +12,5 @@ notifications:
   code_climate:
     repo_token:
       secure: "h6FILH7m2zl7OVJz0qf0kqtlJE8YpBtwTigQ/Mq1HwAqZNaDUlVt5rcd8gDf/EDcPNHxvIIgm5HwXzlFLtUUOTsxlWqgt/RlsyovKJ/iapdiuNAPU33HKtXVZs2G7hkBWgrihNozPw2WeSECu/igpikvzpythEdxhU63JAKOJBU="
-deploy:
-  provider: heroku
-  api_key:
-    secure: poyBk0A8q4/d3uyrauRNHYZ0+2FF7PA1DWGGRAJ7xsS1cyl+lQ528ctaNqWcFTvq5bDdU+cynqUEr7rhKEWK/AACXjp3F/8FjV6R00jledqOdjp7VwiYABxy1s1BDuGrG8WLIHEKdU4+SfEbyojl2jYb/rY4akDQTez7wo9dGU8=
-  app: steam-hours
-  on:
-    repo: Sinetheta/steam-hours
-  run:
-    - "rake db:migrate"
-    - restart
 after_success:
   - bundle exec codeclimate-test-reporter
