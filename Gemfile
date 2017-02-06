@@ -77,7 +77,7 @@ group :development, :test do
   gem 'timecop'
 end
 
-group :production do
+group :production, :staging do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
