@@ -68,10 +68,10 @@ group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter', "~> 1.0.0"
 end
+gem 'pry'
 
 group :development, :test do
   gem 'dotenv-rails'
-  gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'
   gem 'timecop'
